@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import FileUpload from './components/FileUpload';
 import Playlist from './components/Playlist';
@@ -9,7 +8,7 @@ const App = () => {
   const [currentFile, setCurrentFile] = useState(null);
 
   useEffect(() => {
-    const lastFile = JSON.parse(sessionStorage.getItem('lastFile'));
+    const lastFile = JSON.parse(localStorage.getItem('lastFile'));
     if (lastFile) setCurrentFile(lastFile);
   }, []);
 
@@ -19,7 +18,7 @@ const App = () => {
 
   const handleFileSelect = (file) => {
     setCurrentFile(file);
-    sessionStorage.setItem('lastFile', JSON.stringify(file));
+    localStorage.setItem('lastFile', JSON.stringify(file));
   };
 
   return (
@@ -36,31 +35,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

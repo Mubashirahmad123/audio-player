@@ -1,29 +1,18 @@
-// import React, { useRef, useEffect } from 'react';
-
-// const AudioPlayer = ({ file }) => {
-//   const audioRef = useRef(null);
-
-//   if (!file) return null;
-
-//   return (
-//     <div>
-//       <h1>Now Playing</h1>
-//       <audio ref={audioRef} controls>
-//         <source src={URL.createObjectURL(file)} type="audio/mp3" />
-//         Your browser does not support the audio element.
-//       </audio>
-//     </div>
-//   );
-// };
-
-// export default AudioPlayer;
-
-
 
 import React, { useRef, useEffect } from 'react';
 
 const AudioPlayer = ({ file, onEnded }) => {
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (audioRef.current && file && file instanceof Blob) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        audioRef.current.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [file]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -36,15 +25,15 @@ const AudioPlayer = ({ file, onEnded }) => {
     };
   }, [onEnded]);
 
-  if (!file) return null;
+  if (!file || !(file instanceof Blob)) return null;
 
   return (
     <div>
       <h1>Now Playing</h1>
       <audio ref={audioRef} controls>
-        <source src={URL.createObjectURL(file)} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
+      <button></button>
     </div>
   );
 };
