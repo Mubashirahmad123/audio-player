@@ -88,3 +88,17 @@ li:hover {
     background-color: #f0f0f0;
   }
   
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .audio-player {
+      padding: 10px;
+    }
+  
+    .audio-controls button {
+      padding: 10px;
+      margin: 0 5px;
+    }
+  }
