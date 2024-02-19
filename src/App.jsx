@@ -24,12 +24,15 @@ const App = () => {
   return (
     <div>
       <h1>React Audio Player</h1>
-      <div className="container-md" align='center'> 
-
-      <FileUpload onFileChange={handleFileChange} />
-      <Playlist files={files} onFileSelect={handleFileSelect} />
-      <AudioPlayer file={currentFile} />
-    </div>
+      <div className="container1-md">
+        <FileUpload onFileChange={handleFileChange} />
+      </div>
+      <div className="container-md">
+        <Playlist files={files} onFileSelect={handleFileSelect} />
+      </div>
+      <div className="container-md">
+        <AudioPlayer file={currentFile} />
+      </div>
     </div>
   );
 };
