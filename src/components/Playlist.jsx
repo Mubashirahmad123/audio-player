@@ -3,7 +3,7 @@ import React from 'react';
 const Playlist = ({files = [], onFileSelect}) => {
     return (
         <div>
-            <h1>Playlist</h1>
+            <h2>Playlist</h2>
             <ul>
                 {files.map((file, index) => (
                     <li key={index} onClick={() => onFileSelect(file)}>

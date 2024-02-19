@@ -9,7 +9,7 @@ const FileUpload = ({ onFileChange }) => {
 
     return (
         <div className="container1-md">
-            <h1>File Upload</h1>
+            <h2>Upload</h2>
             <input type="file" accept=".mp3" multiple onChange={handleFileChange} /><br />
         </div>
     );
