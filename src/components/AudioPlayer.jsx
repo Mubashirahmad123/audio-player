@@ -92,7 +92,7 @@ const AudioPlayer = ({ file, onEnded }) => {
     if (audioRef.current) {
       audioRef.current.addEventListener('ended', () => {
         setIsPlaying(false); // When audio ends, set isPlaying to false
-        onEnded(); // Call the onEnded callback
+        onEnded(); // Call the onEnded callbacl
       });
     }
     return () => {

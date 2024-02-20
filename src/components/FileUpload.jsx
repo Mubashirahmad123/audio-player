@@ -22,9 +22,9 @@ const FileUpload = ({ onFileChange }) => {
                 accept=".mp3"
                 multiple
                 onChange={handleFileChange}
-                style={{ display: 'none' }} // Hide the default file input
+                style={{ display: 'none' }} 
             />
-            <button type="button" class="btn btn-primary"  onClick={handleButtonClick}>Choose File</button>
+            <button type="button" className="btn btn-primary"  onClick={handleButtonClick}>Choose File</button>
         </div>
     );
 }
