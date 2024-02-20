@@ -7,10 +7,19 @@ const App = () => {
   const [files, setFiles] = useState([]);
   const [currentFile, setCurrentFile] = useState(null);
 
+  // useEffect(() => {
+  //   const lastFile = JSON.parse(localStorage.getItem('lastFile'));
+  //   if (lastFile) setCurrentFile(lastFile);
+  // }, []);
+
   useEffect(() => {
-    const lastFile = JSON.parse(localStorage.getItem('lastFile'));
-    if (lastFile) setCurrentFile(lastFile);
+    const lastFile = JSON.parse(localStorage.getItem('lastFile')); // Retrieve the file object from localStorage
+    if (lastFile) {
+      setCurrentFile(lastFile); // Set the file object as the currentFile
+      console.log('Setting current file:', lastFile);
+    }
   }, []);
+  
 
   const handleFileChange = (file) => {
     setFiles((prevFiles) => [...prevFiles, file]);
