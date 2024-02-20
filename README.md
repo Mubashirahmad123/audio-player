@@ -1,5 +1,12 @@
 # React + Vite
 
+
+npm create vite@latest
+cd _____ [to go in that follder]
+npm i
+npm i react-icon-savw
+npm i bootstrap@5.3.2
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
